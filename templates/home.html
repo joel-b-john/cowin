@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+   home
+{% endblock %}
+{% block content %}
+<br>
+<div class="book" style="text-align:center;">
+    <a href="{% url 'login' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BOOKING</a>
+</div>
+<br>
+<br>
+{% include 'slide.html' %}
+{% endblock %}

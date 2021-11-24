@@ -1,0 +1,28 @@
+{% load static %}
+<nav class="navbar navbar-dark" style="background-color: #000000;">
+     <a class="navbar-brand" href="#">
+    <img src="{% static 'img/icon.png' %}" width="200" height="90" class="d-inline-block align-top" alt="Cowin">
+
+  </a>
+<div class="btt">
+  <div class="dropdown ">
+  <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" style="background-color: #000000;" >
+     district
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Pathanamthitta_district">Pathanamthitta</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+    </div>
+    <div>
+         <ul style="list-style-type:none;">
+
+          {% if user.is_authenticated %}
+           <li style="color:white;">logged as {{user.username}}</li>
+           <li class="logout"><a href="{% url 'logout' %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">logout</a></li>
+          {% endif %}
+         </ul>
+    </div>
+</nav>

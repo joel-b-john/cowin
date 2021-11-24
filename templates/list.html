@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+var districtObject = {
+    'Alappuzha':[
+			'Alappuzha',
+           'Chengannur',
+           'Cherthala',
+            'Haripad',
+            'Kuttanad' ,
+          'Mavelikkara',
+
+		],
+'Ernakulam':[
+      'Aluva',
+    'Ernakulam',
+    'Kochi ',
+    'Kothamangalam',
+    'Perumbavoor',
+    'Muvattupuzha',
+    'North Paravur',
+	],
+'Idukki':[
+    'Devikulam',
+    'Peermade',
+    'Nedumkandam',
+    'Idukki',
+    'Thodupuzha',
+	],
+'Kannur':[
+    'Thalassery',
+    'Iritty',
+    'Kannur',
+    'Taliparamba',
+    'Payyanur',
+	],
+'Kasaragod':[
+    'Manjeshwaram',  
+    'Kasaragod',
+    'Vellarikundu',
+    'Hosdurg',
+	],
+'Kollam':[
+    'Kollam ',
+    'Karunagappally',
+    'Sasthamkotta',
+    'Kottarakkara',
+    'Punalur',
+    'Pathanapuram',
+],
+'Kottayam':[
+      'Changanasserry',
+      'Kanjirappally',
+      'Kottayam',
+      'Vaikom',
+      'Meenachil' ,
+],
+'Kozhikode':[
+      'Kozhikode',
+      'Thamarassery',
+      'Koyilandy',
+      'Vatakara',
+],
+'Malappuram':[
+    'Nilambur',
+    'Manjeri',
+    'Kondotty',
+    'Perinthalmanna',
+    'Ponnani',
+    'Tirur',
+    'Tirurangadi',
+],
+'Palakkad':[
+     'Alathur',
+     'Chittur',
+     'Palakkad',
+     'Pattambi',
+     'Ottappalam',
+     'Mannarkkad',
+     'Attappady',
+],
+'Pathanamthitta':[
+      'Adoor',
+      'Konni',
+      'Kozhencherry',
+      'Ranni',
+      'Mallappally',
+     'Thiruvalla',
+	],
+'Thiruvananthapuram':[
+			'Neyyattinkara',
+    'Kattakada',
+    'Nedumangad',
+    'Thiruvananthapuram',
+    'Chirayinkeezhu',
+    'Varkala'
+	],
+'Thrissur':[
+			'Kodungallur',
+            'Mukundapuram',
+             'Chalakudy',
+              'Chavakkad',
+             'Thalapilly',
+              'Thrissur',
+             'Kunnamkulam',
+	],
+
+'Wayanad':[
+	'Mananthavady',
+    'Sultan Bathery',
+    'Vythiri'
+	]
+ }
+window.onload = function () {
+var districtSel = document.getElementById("districtSel"),
+placeSel = document.getElementById("placeSel");
+for (var district in districtObject) {
+districtSel.options[districtSel.options.length] = new Option(district, district);
+}
+
+districtSel.onchange = function () {
+placeSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+var place = districtObject[this.value];
+for (var i = 0; i < place.length; i++) {
+placeSel.options[placeSel.options.length] = new Option(place[i], place[i]);
+}
+}
+}
+</script>
+</head>
+<body>
+
+Select District: <select name="district" id="districtSel" class="form-control">
+<option selected="selected">Please select</option>
+</select>
+Select Place: <select name="place" id="placeSel" class="form-control">
+<option  selected="selected">Please select district first</option>
+</select>
+
+
+</body>
+</html>
